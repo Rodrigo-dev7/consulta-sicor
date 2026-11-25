@@ -21,7 +21,8 @@ const criticas = [
     "message": "Duplicidade de cédula",
     "summary": "Referência BACEN duplicada e encaminhamento ao COICC.",
     "guidance": "A crítica ocorre devido a duplicidade de referência bacen no SICOR, em virtude de várias tentativas de envio ao sicor e fechamento do contrato, a crítica é emitida. Com isso, deve-se registrar tarefa ao COICC solicitando o fechamento do contrato, mencionando no teor da tarefa o número do contrato, o sequencial da operação do contrato, o número da referência bacen exibida na crítica e a matrícula do usuário solicitante.\n\nSegue exemplo:\n\nContrato: [número do contrato]\n\nOperação: [sequencial]\n\nReferência BACEN: [referência exibida]\n\nMatrícula: FXXXXX /ou CXXXXX",
-    "reply": ""
+    "reply": "",
+    "replyNote": "O mapeamento orienta encaminhar ao COICC, sem modelo de resposta ao usuário."
   },
   {
     "id": 4,
@@ -182,5 +183,89 @@ const criticas = [
     "summary": "Conferência dos pontos inicial e final da gleba.",
     "guidance": "A crítica apresentada ocorre, pois, o primeiro e último ponto das coordenadas geodésicas não estão iguais, deve-se orientar ao usuário verificar e ajustar os pontos.",
     "reply": "Prezado, boa tarde!\n\nConforme análise, identificamos que as coordenadas do primeiro e do último ponto das glebas estão divergentes. Para o correto fechamento do polígono, orientamos que o último ponto seja repetido exatamente igual ao primeiro. Gentileza realizar os ajustes necessários e, posteriormente, efetuar uma nova tentativa.\n\nAtenciosamente,"
+  },
+  {
+    "id": 21,
+    "category": "Áreas e coordenadas",
+    "message": "ECOR2098 · Glebas não estão totalmente inscritas nos CARs informados",
+    "summary": "Uma parte da gleba ficou fora do perímetro dos CARs informados.",
+    "guidance": "A crítica ocorre quando parte da gleba fica fora dos limites dos CARs informados na operação.\n\nO Cadastro Ambiental Rural (CAR) identifica o perímetro do imóvel rural. A gleba é a área onde o financiamento será aplicado.\n\nUma possibilidade de correção é informar os CARs que faltam para que, juntos, cubram toda a gleba.\n\nOutra possibilidade é ajustar a delimitação da gleba para que ela fique inteiramente dentro do CAR informado.",
+    "screens": [
+      {
+        "file": "telas/ecor2098-gleba-fora-do-car.jpeg",
+        "alt": "Um círculo representa a gleba e cruza o limite do CAR. A parte da gleba fora do CAR aparece em roxo.",
+        "caption": "Parte da gleba fora do CAR informado",
+        "width": 660,
+        "height": 344,
+        "afterParagraph": 1
+      },
+      {
+        "file": "telas/ecor2098-mensagem-sinc.png",
+        "alt": "O SINC exibe a mensagem do SICOR informando que as glebas não estão totalmente inscritas nos CARs informados.",
+        "caption": "Mensagem da crítica no SINC",
+        "width": 339,
+        "height": 130,
+        "afterParagraph": 1
+      },
+      {
+        "file": "telas/car-e-gleba.jpeg",
+        "alt": "Um polígono representa o imóvel delimitado pelo CAR e um círculo representa a gleba onde o financiamento será aplicado.",
+        "caption": "Representação do CAR e da gleba",
+        "width": 623,
+        "height": 422,
+        "afterParagraph": 2
+      },
+      {
+        "file": "telas/ecor2098-informar-cars.jpeg",
+        "alt": "Vários polígonos de CAR cobrem, juntos, toda a área da gleba, representada por um círculo.",
+        "caption": "Gleba coberta pelos CARs informados",
+        "width": 577,
+        "height": 449,
+        "afterParagraph": 3
+      },
+      {
+        "file": "telas/ecor2098-ajustar-gleba.jpeg",
+        "alt": "A gleba, representada por um círculo, está inteiramente dentro do polígono do CAR.",
+        "caption": "Gleba ajustada ao limite do CAR",
+        "width": 389,
+        "height": 333,
+        "afterParagraph": 4
+      }
+    ],
+    "reply": ""
+  },
+  {
+    "id": 22,
+    "category": "Áreas e coordenadas",
+    "message": "ECOR2099 · CAR deve possuir sobreposição com alguma gleba informada",
+    "summary": "Um dos CARs enviados ficou sem sobreposição com as glebas da operação.",
+    "guidance": "A crítica ocorre quando pelo menos um dos CARs informados não se sobrepõe a nenhuma das glebas da operação.\n\nSe um CAR foi informado a mais, uma possibilidade de correção é retirá-lo da operação.\n\nSe o CAR faz parte da operação, outra possibilidade é ajustar a delimitação da gleba ou informar a gleba faltante para que haja sobreposição com esse CAR.",
+    "screens": [
+      {
+        "file": "telas/ecor2099-car-sem-gleba.jpeg",
+        "alt": "A gleba cruza dois polígonos de CAR. O terceiro CAR, destacado em roxo, está fora da gleba.",
+        "caption": "CAR sem sobreposição com a gleba",
+        "width": 737,
+        "height": 371,
+        "afterParagraph": 1
+      },
+      {
+        "file": "telas/ecor2099-retirar-car.jpeg",
+        "alt": "Após a remoção do CAR que estava fora da gleba, permanecem os dois CARs que se sobrepõem à gleba.",
+        "caption": "Operação com os CARs que se sobrepõem à gleba",
+        "width": 354,
+        "height": 376,
+        "afterParagraph": 2
+      },
+      {
+        "file": "telas/ecor2099-informar-gleba.jpeg",
+        "alt": "Uma segunda gleba aparece dentro do CAR que antes não tinha sobreposição com nenhuma gleba.",
+        "caption": "Segunda gleba informada no CAR correspondente",
+        "width": 492,
+        "height": 366,
+        "afterParagraph": 3
+      }
+    ],
+    "reply": ""
   }
 ];

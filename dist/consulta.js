@@ -63,12 +63,13 @@ const fichas = criticas.map((critica) => {
   ficha.querySelector(".critica-mensagem").textContent = critica.message;
   ficha.querySelector(".critica-sumario").textContent = critica.summary;
   const orientacao = ficha.querySelector(".orientacao");
+  const telas = critica.screens ?? (critica.screen ? [critica.screen] : []);
   for (const [index, texto] of critica.guidance.split("\n\n").entries()) {
     const paragrafo = document.createElement("p");
     paragrafo.textContent = texto;
     orientacao.append(paragrafo);
-    if (critica.screen?.afterParagraph === index + 1) {
-      orientacao.append(criarTela(critica.screen));
+    for (const tela of telas.filter((item) => item.afterParagraph === index + 1)) {
+      orientacao.append(criarTela(tela));
     }
   }
   if (/\bzarc\b/.test(textoBusca)) {
@@ -83,7 +84,9 @@ const fichas = criticas.map((critica) => {
     orientacao.append(referencia);
   }
   ficha.querySelector(".modelo-resposta").hidden = !critica.reply;
-  ficha.querySelector(".sem-resposta").hidden = Boolean(critica.reply);
+  const semResposta = ficha.querySelector(".sem-resposta");
+  semResposta.hidden = !critica.replyNote;
+  semResposta.textContent = critica.replyNote ?? "";
   resposta.textContent = critica.reply;
   ficha.querySelector(".copiar").addEventListener("click", () => {
     copiarResposta(resposta, ficha.querySelector(".feedback"));

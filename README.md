@@ -1,6 +1,6 @@
 # Consulta de críticas do SICOR
 
-Protótipo de consulta às mensagens de validação exibidas pelo SICOR durante o envio dos dados ou o fechamento de uma operação. O catálogo foi montado com base no documento *Mapeamento de críticas de preenchimento do SICOR*.
+Protótipo de consulta às mensagens de validação exibidas pelo SICOR durante o envio dos dados ou o fechamento de uma operação. O catálogo foi montado com base nos documentos *Mapeamento de críticas de preenchimento do SICOR* e *Validação CAR × Glebas*.
 
 ## Como usar
 
@@ -11,7 +11,7 @@ Protótipo de consulta às mensagens de validação exibidas pelo SICOR durante 
 
 ## Conteúdo do protótipo
 
-O catálogo reúne 20 críticas e 19 modelos de resposta. As orientações refletem o documento de referência, e os identificadores dos exemplos foram substituídos por campos genéricos. O botão **SICOR Notícias** abre a página do Banco Central em uma nova aba. A busca funciona com os dados locais do catálogo. [SICOR Notícias](https://www.bcb.gov.br/estabilidadefinanceira/sicornoticias)
+O catálogo reúne 22 críticas e 19 modelos de resposta. As orientações refletem os documentos de referência, e os identificadores dos exemplos foram substituídos por campos genéricos. O botão **SICOR Notícias** abre a página do Banco Central em uma nova aba. A busca funciona com os dados locais do catálogo. [SICOR Notícias](https://www.bcb.gov.br/estabilidadefinanceira/sicornoticias)
 
 ## Estrutura do projeto
 
