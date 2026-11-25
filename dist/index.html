@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Consulte as críticas de preenchimento do SICOR mapeadas no documento de referência.">
+  <title>Consulta de críticas do SICOR</title>
+  <link rel="stylesheet" href="estilos.css">
+  <script src="criticas.js" defer></script>
+  <script src="consulta.js" defer></script>
+</head>
+<body>
+  <a class="pular" href="#busca">Ir para a busca</a>
+  <header class="cabecalho">
+    <div class="largura cabecalho-interno">
+      <span class="marca"><span class="marca-icone" aria-hidden="true"><i></i><i></i><i></i><i></i></span> Consulta SICOR</span>
+      <a class="link-noticias" href="https://www.bcb.gov.br/estabilidadefinanceira/sicornoticias" target="_blank" rel="noopener noreferrer">SICOR Notícias<span class="somente-leitor"> (abre em nova aba)</span></a>
+    </div>
+  </header>
+
+  <main>
+    <section class="introducao" aria-labelledby="titulo">
+      <div class="largura">
+        <span class="selo">Protótipo</span>
+        <h1 id="titulo">Críticas de preenchimento<br class="quebra-titulo"> do SICOR</h1>
+        <p>Encontre a tratativa para a mensagem exibida no envio dos dados ou no fechamento da operação.</p>
+      </div>
+    </section>
+
+    <div class="largura conteudo">
+      <search class="painel-busca" aria-label="Buscar críticas">
+        <label for="busca">Buscar crítica</label>
+        <div class="campo-busca">
+          <span class="lupa" aria-hidden="true"></span>
+          <input id="busca" type="search" placeholder="Cole a mensagem do SICOR ou digite uma palavra-chave" autocomplete="off" spellcheck="false">
+          <button class="limpar" id="limpar" type="button" hidden>Limpar</button>
+        </div>
+      </search>
+
+      <div class="catalogo">
+        <aside class="filtros" aria-labelledby="titulo-filtros">
+          <h2 id="titulo-filtros">Filtrar por tema</h2>
+          <div id="temas" class="temas"></div>
+        </aside>
+
+        <section class="resultados" aria-labelledby="titulo-resultados">
+          <div class="resultados-cabecalho">
+            <h2 id="titulo-resultados">Críticas mapeadas</h2>
+            <p id="contagem" role="status"></p>
+          </div>
+          <div id="lista"></div>
+          <div class="vazio" id="vazio" hidden>
+            <h3>Nenhuma crítica encontrada</h3>
+            <p>Tente buscar por um trecho da mensagem ou selecione outro tema.</p>
+          </div>
+          <noscript><p>Habilite o JavaScript no navegador para consultar o catálogo.</p></noscript>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="rodape">
+    <div class="largura">
+      <p><strong>Fonte do catálogo</strong> · Mapeamento de críticas de preenchimento do SICOR</p>
+      <p>As orientações e referências normativas reproduzem o documento usado neste protótipo.</p>
+    </div>
+  </footer>
+
+  <template id="modelo-critica">
+    <details class="critica">
+      <summary class="critica-resumo">
+        <span class="critica-texto">
+          <span class="critica-tema"></span>
+          <span class="critica-mensagem"></span>
+          <span class="critica-sumario"></span>
+        </span>
+        <span class="alternar" aria-hidden="true"></span>
+      </summary>
+      <div class="critica-detalhe">
+        <h3>Orientação do mapeamento</h3>
+        <p class="orientacao"></p>
+        <section class="modelo-resposta">
+          <div class="modelo-cabecalho">
+            <h3>Modelo de resposta</h3>
+            <button type="button" class="copiar">Copiar resposta</button>
+          </div>
+          <p class="resposta"></p>
+          <p class="feedback" role="status"></p>
+        </section>
+        <p class="sem-resposta" hidden>O mapeamento orienta encaminhar ao COICC, sem modelo de resposta ao usuário.</p>
+      </div>
+    </details>
+  </template>
+</body>
+</html>
