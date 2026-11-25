@@ -2,36 +2,31 @@
 
 (() => {
   const raiz = document.documentElement;
-  const sistema = window.matchMedia("(prefers-color-scheme: dark)");
   const chave = "consulta-sicor-tema";
-  let escolha;
+  let tema = "claro";
 
   try {
-    const salvo = localStorage.getItem(chave);
-    if (salvo === "claro" || salvo === "escuro") escolha = salvo;
+    if (localStorage.getItem(chave) === "escuro") tema = "escuro";
   } catch {
-    // A preferência do sistema continua disponível sem armazenamento local.
+    // O tema claro é o padrão quando o navegador bloqueia o armazenamento.
   }
 
-  const temaAtual = () => escolha ?? (sistema.matches ? "escuro" : "claro");
-  raiz.dataset.tema = temaAtual();
+  raiz.dataset.tema = tema;
 
   document.addEventListener("DOMContentLoaded", () => {
     const botao = document.querySelector("#alternar-tema");
     function aplicarTema() {
-      const tema = temaAtual();
       raiz.dataset.tema = tema;
       botao.setAttribute("aria-pressed", String(tema === "escuro"));
     }
 
     aplicarTema();
     botao.hidden = false;
-    sistema.addEventListener("change", aplicarTema);
     botao.addEventListener("click", () => {
-      escolha = temaAtual() === "escuro" ? "claro" : "escuro";
+      tema = tema === "escuro" ? "claro" : "escuro";
       aplicarTema();
       try {
-        localStorage.setItem(chave, escolha);
+        localStorage.setItem(chave, tema);
       } catch {
         // A escolha se aplica à página mesmo com armazenamento bloqueado.
       }

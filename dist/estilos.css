@@ -77,7 +77,7 @@ h1, h2, h3, p { margin: 0; }
 }
 .marca-icone i { height: 5px; background: #9bdfc5; border-radius: 1px; }
 .marca-icone i:last-child { background: #fff; }
-.link-noticias, .alternar-tema {
+.link-noticias {
   padding: .5rem .85rem;
   border: 1px solid var(--borda);
   border-radius: 8px;
@@ -88,11 +88,21 @@ h1, h2, h3, p { margin: 0; }
   font-weight: 700;
   white-space: nowrap;
 }
-.link-noticias:hover, .alternar-tema:hover, .alternar-tema[aria-pressed="true"] { background: var(--palido); }
-.alternar-tema { display: inline-flex; align-items: center; gap: .45rem; }
+.link-noticias:hover, .alternar-tema:hover { background: var(--palido); }
+.alternar-tema {
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--suave);
+}
 .icone-tema { display: grid; place-items: center; width: 1rem; font-size: 1.15rem; line-height: 1; }
-.icone-tema::before { content: "\263E"; }
-.alternar-tema[aria-pressed="true"] .icone-tema::before { content: "\2600"; }
+.icone-tema::before { content: "\263E\FE0E"; }
+.alternar-tema[aria-pressed="true"] .icone-tema::before { content: "\2600\FE0E"; }
 
 .introducao {
   background: radial-gradient(ellipse at 100% 20%, var(--gradiente-introducao), transparent 64%), var(--fundo-introducao);
@@ -262,8 +272,7 @@ h1 {
   .cabecalho-interno { min-height: 3.75rem; flex-wrap: wrap; gap: .4rem; padding-block: .5rem; }
   .acoes-cabecalho { gap: .35rem; }
   .marca { gap: .45rem; font-size: .9rem; }
-  .link-noticias, .alternar-tema { padding: .42rem .55rem; }
-  .rotulo-tema { display: none; }
+  .link-noticias { padding: .42rem .55rem; }
   .introducao { padding-top: 2.35rem; }
   .quebra-titulo { display: none; }
   .painel-busca { padding: .9rem; }
