@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Consulte as críticas de preenchimento do SICOR mapeadas no documento de referência.">
   <title>Consulta de críticas do SICOR</title>
+  <script src="tema.js"></script>
   <link rel="stylesheet" href="estilos.css">
   <script src="criticas.js" defer></script>
   <script src="consulta.js" defer></script>
@@ -14,14 +15,19 @@
   <header class="cabecalho">
     <div class="largura cabecalho-interno">
       <span class="marca"><span class="marca-icone" aria-hidden="true"><i></i><i></i><i></i><i></i></span> Consulta SICOR</span>
-      <a class="link-noticias" href="https://www.bcb.gov.br/estabilidadefinanceira/sicornoticias" target="_blank" rel="noopener noreferrer">SICOR Notícias<span class="somente-leitor"> (abre em nova aba)</span></a>
+      <div class="acoes-cabecalho">
+        <button class="alternar-tema" id="alternar-tema" type="button" aria-label="Tema escuro" aria-pressed="false" hidden>
+          <span class="icone-tema" aria-hidden="true"></span>
+          <span class="rotulo-tema">Tema escuro</span>
+        </button>
+        <a class="link-noticias" href="https://www.bcb.gov.br/estabilidadefinanceira/sicornoticias" target="_blank" rel="noopener noreferrer">SICOR Notícias<span class="somente-leitor"> (abre em nova aba)</span></a>
+      </div>
     </div>
   </header>
 
   <main>
     <section class="introducao" aria-labelledby="titulo">
       <div class="largura">
-        <span class="selo">Protótipo</span>
         <h1 id="titulo">Críticas de preenchimento<br class="quebra-titulo"> do SICOR</h1>
         <p>Encontre a tratativa para a mensagem exibida no envio dos dados ou no fechamento da operação.</p>
       </div>
@@ -62,7 +68,7 @@
   <footer class="rodape">
     <div class="largura">
       <p><strong>Fonte do catálogo</strong> · Mapeamento de críticas de preenchimento do SICOR</p>
-      <p>As orientações e referências normativas reproduzem o documento usado neste protótipo.</p>
+      <p>As orientações e referências normativas reproduzem o conteúdo do documento de referência.</p>
     </div>
   </footer>
 
