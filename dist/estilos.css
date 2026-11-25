@@ -189,7 +189,32 @@ h1 {
 .critica[open] .alternar::after { display: none; }
 .critica-detalhe { border-top: 1px solid var(--borda); margin-inline: 1.05rem; padding: 1rem 0 1.15rem; }
 .critica-detalhe h3 { font-size: 1rem; line-height: 1.3; }
-.orientacao, .resposta { white-space: pre-line; overflow-wrap: anywhere; margin-top: .5rem; }
+.orientacao p, .resposta { white-space: pre-line; overflow-wrap: anywhere; margin-top: .5rem; }
+.orientacao p + p { margin-top: .75rem; }
+.tela-orientacao {
+  width: fit-content;
+  max-width: 100%;
+  margin: .85rem 0;
+  border: 1px solid var(--borda);
+  border-radius: 8px;
+  background: var(--pagina);
+}
+.tela-orientacao img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 7px 7px 0 0;
+}
+.tela-orientacao figcaption {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: .3rem 1rem;
+  padding: .55rem .75rem;
+  color: var(--suave);
+  font-size: .875rem;
+}
+.tela-orientacao a { color: var(--marca); font-weight: 650; }
 .modelo-resposta { margin-top: 1rem; padding: .9rem; background: var(--pagina); border-radius: 8px; }
 .modelo-cabecalho { display: flex; justify-content: space-between; flex-wrap: wrap; align-items: center; gap: .6rem; }
 .feedback:not(:empty) { color: var(--marca); margin-top: .5rem; font-size: .875rem; }

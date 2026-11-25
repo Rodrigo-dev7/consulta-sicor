@@ -32,13 +32,44 @@ async function copiarResposta(resposta, feedback) {
   }
 }
 
+function criarTela({ file, alt, caption, width, height }) {
+  const figura = document.createElement("figure");
+  figura.className = "tela-orientacao";
+  const imagem = document.createElement("img");
+  imagem.src = file;
+  imagem.alt = alt;
+  imagem.width = width;
+  imagem.height = height;
+  imagem.loading = "lazy";
+  const legenda = document.createElement("figcaption");
+  const descricao = document.createElement("span");
+  descricao.textContent = caption;
+  const ampliar = document.createElement("a");
+  ampliar.href = file;
+  ampliar.target = "_blank";
+  ampliar.rel = "noopener noreferrer";
+  ampliar.textContent = "Ampliar imagem";
+  ampliar.setAttribute("aria-label", `Ampliar imagem de ${caption} (abre em nova aba)`);
+  legenda.append(descricao, ampliar);
+  figura.append(imagem, legenda);
+  return figura;
+}
+
 const fichas = criticas.map((critica) => {
   const ficha = modelo.content.firstElementChild.cloneNode(true);
   const resposta = ficha.querySelector(".resposta");
   ficha.querySelector(".critica-tema").textContent = critica.category;
   ficha.querySelector(".critica-mensagem").textContent = critica.message;
   ficha.querySelector(".critica-sumario").textContent = critica.summary;
-  ficha.querySelector(".orientacao").textContent = critica.guidance;
+  const orientacao = ficha.querySelector(".orientacao");
+  for (const [index, texto] of critica.guidance.split("\n\n").entries()) {
+    const paragrafo = document.createElement("p");
+    paragrafo.textContent = texto;
+    orientacao.append(paragrafo);
+    if (critica.screen?.afterParagraph === index + 1) {
+      orientacao.append(criarTela(critica.screen));
+    }
+  }
   ficha.querySelector(".modelo-resposta").hidden = !critica.reply;
   ficha.querySelector(".sem-resposta").hidden = Boolean(critica.reply);
   resposta.textContent = critica.reply;

@@ -36,6 +36,14 @@ const criticas = [
     "category": "Proagro e seguro",
     "message": "Contratação de seguro é obrigatória",
     "summary": "Conferência do seguro na aba Garantias da proposta.",
+    "screen": {
+      "file": "telas/garantias-seguro.png",
+      "alt": "A aba Garantias e o campo Adesão ao PROAGRO estão destacados. A lista mostra as opções Não se aplica, Outro seguro, Proagro + e Proagro tradicional.",
+      "caption": "Aba Garantias · Campo Adesão ao PROAGRO",
+      "width": 1060,
+      "height": 201,
+      "afterParagraph": 1
+    },
     "guidance": "A crítica ocorre porque o SICOR identificou que a operação não contém informações referentes ao seguro do financiamento. Em determinadas modalidades de crédito rural, a adesão ao Proagro ou a contratação de outro seguro é obrigatória, conforme as regras aplicáveis à operação.\n\nAs informações referentes ao seguro são recuperadas da proposta deferida. Dessa forma, orientamos verificar, na aba Garantias, se o campo referente ao seguro está preenchido corretamente ou se consta a opção “Não se aplica”.\n\nCaso esteja selecionada a opção “Não se aplica” e a unidade necessite incluir as informações do seguro, o ajuste deverá ser realizado mediante a elaboração de uma Proposta Operacional Administrativa (POA), conforme disposto no normativo 3102-03-25 – Proposta Operacional Administrativa (POA).\n\nNota: Importante verificar se para a cultura utilizada há zoneamento vigente, pois se há Zarc, é obrigatório ter seguro. De acordo com o normativo 3102-42-02 - Enquadramento, item 5 O empreendimento de custeio agrícola de até R$ 200.000,00 (duzentos mil reais), cuja lavoura esteja compreendida no Zarc, financiado com participação de recursos controlados, deve ser integralmente enquadrado no Proagro, observadas as condições estabelecidas nos itens 18 e 19.",
     "reply": "Prezado(a), boa tarde!\n\nA crítica ocorre devido à ausência de informações sobre o seguro do financiamento no SICOR. Orientamos verificar, na proposta deferida, na aba Garantias, se o campo referente ao seguro está preenchido corretamente ou se consta “Não se aplica”. Caso seja necessário incluir as informações, o ajuste deverá ser realizado por meio de POA, conforme o normativo 3102-03-25.\n\nAtenciosamente,"
   },
@@ -60,6 +68,14 @@ const criticas = [
     "category": "Empreendimento",
     "message": "Data de emissão maior ou igual à data de início da colheita",
     "summary": "Conferência da data de colheita em relação à safra e à emissão.",
+    "screen": {
+      "file": "telas/empreendimentos-colheita.png",
+      "alt": "Campos com as datas de início e fim de plantio e colheita. O rótulo Data Início Colheita está destacado em amarelo.",
+      "caption": "Aba Empreendimentos · Campo Data Início Colheita",
+      "width": 589,
+      "height": 64,
+      "afterParagraph": 1
+    },
     "guidance": "A crítica é gerada com base na “data início colheita”, da aba empreendimentos. A data deve estar dentro do período da safra, bem como posterior a data de emissão do contrato.",
     "reply": "Prezado(a), boa tarde!\n\nOrientamos verificar a data de início da colheita na aba Empreendimentos, garantindo que esteja dentro do período da safra e seja posterior à data de emissão do contrato.\n\nAtenciosamente,"
   },
@@ -84,6 +100,14 @@ const criticas = [
     "category": "Conformidade socioambiental",
     "message": "Não aderente ao MCR MCR2-9-18",
     "summary": "Indicadores de conformidade e supressão de vegetação nativa.",
+    "screen": {
+      "file": "telas/sinc-conformidades.png",
+      "alt": "Lista Domínio de Conformidades do SINC com opções de cumprimento do MCR 2-9-18, alíneas a, b, c e d.",
+      "caption": "SINC · Domínio de Conformidades",
+      "width": 1881,
+      "height": 510,
+      "afterParagraph": 2
+    },
     "guidance": "A crítica ocorre porque o usuário não inseriu o indicador de conformidade na operação do contrato.\n\nNo SINC, constam novos indicadores de conformidades que possibilitam o prosseguimento do contrato. Cabe ao usuário identificar a opção aplicável ao caso do cliente e realizar o devido apontamento.",
     "reply": "Prezado, boa tarde!\n\nConforme disposto no normativo 3102-03-27 – Impedimentos Sociais, Ambientais e Climáticos (Conformidade Socioambiental) e Críticas SICOR, o processo poderá prosseguir, desde que atendidas as condições previstas na Tabela 2, item 4, Nota 12: O item supressão da vegetação nativa não poderá constar no projeto/orçamento de financiamento, nem como contrapartida de recursos próprios, podendo ser financiados os demais itens necessários ao empreendimento.\n\nAtenciosamente,"
   },
