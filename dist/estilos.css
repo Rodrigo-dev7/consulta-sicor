@@ -252,7 +252,7 @@ h1 {
   color: var(--suave);
   font-size: .875rem;
 }
-.tela-orientacao a { color: var(--marca); font-weight: 650; }
+.orientacao a { color: var(--marca); font-weight: 650; }
 .modelo-resposta { margin-top: 1rem; padding: .9rem; background: var(--pagina); border-radius: 8px; }
 .modelo-cabecalho { display: flex; justify-content: space-between; flex-wrap: wrap; align-items: center; gap: .6rem; }
 .feedback:not(:empty) { color: var(--marca); margin-top: .5rem; font-size: .875rem; }

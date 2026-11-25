@@ -58,6 +58,7 @@ function criarTela({ file, alt, caption, width, height }) {
 const fichas = criticas.map((critica) => {
   const ficha = modelo.content.firstElementChild.cloneNode(true);
   const resposta = ficha.querySelector(".resposta");
+  const textoBusca = normalizar([critica.message, critica.category, critica.summary, critica.guidance, critica.reply].join(" "));
   ficha.querySelector(".critica-tema").textContent = critica.category;
   ficha.querySelector(".critica-mensagem").textContent = critica.message;
   ficha.querySelector(".critica-sumario").textContent = critica.summary;
@@ -70,6 +71,17 @@ const fichas = criticas.map((critica) => {
       orientacao.append(criarTela(critica.screen));
     }
   }
+  if (/\bzarc\b/.test(textoBusca)) {
+    const referencia = document.createElement("p");
+    const link = document.createElement("a");
+    link.href = "https://mapa-indicadores.agricultura.gov.br/publico/extensions/Zarc/Zarc.html";
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.textContent = "Consultar o painel do ZARC";
+    link.setAttribute("aria-label", "Consultar o painel do ZARC (abre em nova aba)");
+    referencia.append(link);
+    orientacao.append(referencia);
+  }
   ficha.querySelector(".modelo-resposta").hidden = !critica.reply;
   ficha.querySelector(".sem-resposta").hidden = Boolean(critica.reply);
   resposta.textContent = critica.reply;
@@ -81,7 +93,7 @@ const fichas = criticas.map((critica) => {
     ficha,
     tema: critica.category,
     mensagem: normalizar(critica.message),
-    texto: normalizar([critica.message, critica.category, critica.summary, critica.guidance, critica.reply].join(" ")),
+    texto: textoBusca,
   };
 });
 
