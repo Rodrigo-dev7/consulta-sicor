@@ -63,6 +63,13 @@ const fichas = criticas.map((critica) => {
   ficha.querySelector(".critica-mensagem").textContent = critica.message;
   ficha.querySelector(".critica-sumario").textContent = critica.summary;
   const orientacao = ficha.querySelector(".orientacao");
+  if (critica.messageScreen) {
+    orientacao.append(criarTela({
+      ...critica.messageScreen,
+      alt: `Mensagem do SICOR · ${critica.message}`,
+      caption: "Mensagem exibida pelo SICOR",
+    }));
+  }
   const telas = critica.screens ?? (critica.screen ? [critica.screen] : []);
   for (const [index, texto] of critica.guidance.split("\n\n").entries()) {
     const paragrafo = document.createElement("p");

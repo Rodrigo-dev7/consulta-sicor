@@ -11,7 +11,7 @@ Protótipo de consulta às mensagens de validação exibidas pelo SICOR durante 
 
 ## Conteúdo do protótipo
 
-O catálogo reúne 22 críticas e 19 modelos de resposta. As orientações refletem os documentos de referência, e os identificadores dos exemplos foram substituídos por campos genéricos. O botão **SICOR Notícias** abre a página do Banco Central em uma nova aba. A busca funciona com os dados locais do catálogo. [SICOR Notícias](https://www.bcb.gov.br/estabilidadefinanceira/sicornoticias)
+O catálogo reúne 24 críticas e 21 modelos de resposta. As orientações refletem os documentos de referência, e os identificadores dos exemplos foram substituídos por campos genéricos. O botão **SICOR Notícias** abre a página do Banco Central em uma nova aba. A busca funciona com os dados locais do catálogo. [SICOR Notícias](https://www.bcb.gov.br/estabilidadefinanceira/sicornoticias)
 
 ## Estrutura do projeto
 
