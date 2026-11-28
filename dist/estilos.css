@@ -222,9 +222,26 @@ h1 {
   color: var(--marca);
 }
 .alternar::before, .alternar::after { content: ""; position: absolute; width: .6rem; height: 2px; border-radius: 2px; background: currentColor; }
-.alternar::after { transform: rotate(90deg); }
+.alternar::after { transform: rotate(90deg) scaleX(1); }
 .critica[open] .alternar { background: var(--palido); }
-.critica[open] .alternar::after { display: none; }
+.critica[open] .alternar::after { opacity: 0; transform: rotate(90deg) scaleX(0); }
+
+@media (prefers-reduced-motion: no-preference) {
+  .critica { transition: border-color 160ms ease; }
+  .alternar { transition: background-color 160ms ease; }
+  .alternar::after { transition: opacity 160ms ease, transform 160ms ease; }
+
+  @supports (interpolate-size: allow-keywords) and (transition-behavior: allow-discrete) and selector(details::details-content) {
+    .critica { interpolate-size: allow-keywords; }
+    .critica::details-content {
+      block-size: 0;
+      overflow: clip;
+      transition: block-size 220ms ease, content-visibility 220ms allow-discrete;
+    }
+    .critica[open]::details-content { block-size: auto; }
+  }
+}
+
 .critica-detalhe { border-top: 1px solid var(--borda); margin-inline: 1.05rem; padding: 1rem 0 1.15rem; }
 .critica-detalhe h3 { font-size: 1rem; line-height: 1.3; }
 .orientacao p, .resposta { white-space: pre-line; overflow-wrap: anywhere; margin-top: .5rem; }
